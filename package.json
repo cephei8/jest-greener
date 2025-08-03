@@ -1,0 +1,29 @@
+{
+  "name": "jest-greener",
+  "version": "0.0.3",
+  "author": "cephei8",
+  "homepage": "https://cephei8.github.io/greener",
+  "license": "Apache-2.0",
+  "description": "Jest reporter for Greener",
+  "main": "index.js",
+  "files": [
+    "/LICENSE",
+    "/README.md",
+    "/index.js",
+    "/package.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cephei8/jest-greener.git"
+  },
+  "dependencies": {
+    "greener-reporter": "0.0.4"
+  },
+  "devDependencies": {
+    "@jest/globals": "^30.0.5",
+    "jest": "^30.0.5"
+  },
+  "scripts": {
+    "test": "jest"
+  }
+}
