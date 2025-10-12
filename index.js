@@ -9,8 +9,20 @@ class GreenerReporter {
     }
 
     onRunStart(results, options) {
-        this._reporter = new Reporter();
-        this._session = this._reporter.createSession();
+        let ingress_endpoint = process.env.GREENER_INGRESS_ENDPOINT;
+        let ingress_api_key = process.env.GREENER_INGRESS_API_KEY;
+        this._reporter = new Reporter(ingress_endpoint, ingress_api_key);
+
+        let session_id = process.env.GREENER_SESSION_ID; 
+        let description = process.env.GREENER_SESSION_DESCRIPTION; 
+        let baggage = process.env.GREENER_SESSION_BAGGAGE; 
+        let labels = process.env.GREENER_SESSION_LABELS; 
+        this._session = this._reporter.createSession(
+            (session_id === undefined) ? null : session_id,
+            (description === undefined) ? null : description,
+            (baggage === undefined) ? null : baggage,
+            (labels === undefined) ? null : labels
+        );
     }
 
     onRunComplete(testContexts, results) {
@@ -38,7 +50,7 @@ class GreenerReporter {
                     null,
                     path.relative(this._rootDir, fileResults.testFilePath),
                     null,
-                    "err",
+                    "error",
                     null,
                     null
                 );
