@@ -2,7 +2,7 @@
     "name": "jest-greener",
     "version": "1.4.0",
     "author": "cephei8",
-    "homepage": "https://cephei8.github.io/greener",
+    "homepage": "https://greener.cephei8.dev",
     "license": "Apache-2.0",
     "description": "Jest reporter for Greener",
     "main": "index.js",
