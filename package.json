@@ -1,6 +1,6 @@
 {
     "name": "jest-greener",
-    "version": "1.4.1",
+    "version": "0.13.0",
     "author": "cephei8",
     "homepage": "https://greener.cephei8.dev",
     "license": "Apache-2.0",
@@ -12,7 +12,7 @@
         "url": "git+https://github.com/cephei8/jest-greener.git"
     },
     "dependencies": {
-        "greener-reporter": "1.5.1"
+        "greener-reporter": "0.13.0"
     },
     "devDependencies": {
         "@jest/globals": "^30.0.5",
