@@ -1,0 +1,44 @@
+name: Release
+
+on:
+  workflow_dispatch:
+
+jobs:
+  release_create:
+    name: (Release) Create release
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    environment: npm
+    permissions:
+      id-token: write
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Extract package version
+        run: |
+          export PKG_VERSION=$(npm pkg get version | sed 's/^["'\'']//; s/["'\'']$//')
+          echo "GREENER_PKG_VERSION=$PKG_VERSION" >> "$GITHUB_ENV"
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 'latest'
+
+      - run: npm install -g npm@latest
+
+      - run: |
+          npm i
+          npm pack
+
+      - name: Create release
+        run: |
+          gh release create v${{ env.GREENER_PKG_VERSION }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Publish
+        run: |
+          npm publish --access=public ./jest-greener-${{ env.GREENER_PKG_VERSION }}.tgz
