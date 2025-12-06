@@ -8,6 +8,7 @@
 
 Jest reporter for [Greener](https://sr.ht/~cephei8/greener/).
 
+
 ## Contributing
 See [CONTRIBUTING.md](./CONTRIBUTING.md).
 
