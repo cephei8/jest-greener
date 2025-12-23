@@ -1,6 +1,7 @@
 # Greener Jest Reporter
 Jest reporter for [Greener](https://github.com/cephei8/greener).
 
+
 ## Contributing
 See [CONTRIBUTING.md](./CONTRIBUTING.md).
 
