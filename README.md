@@ -1,4 +1,7 @@
 # Greener Jest Reporter
+
+[![npm version](https://img.shields.io/npm/v/jest-greener.svg)](https://www.npmjs.com/package/jest-greener)
+
 Jest reporter for [Greener](https://github.com/cephei8/greener).
 
 ## Contributing
